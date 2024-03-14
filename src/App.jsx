@@ -19,7 +19,7 @@ function App() {
 
 	return (
 		<>
-			<div className="relative flex justify-between bg-indigo-900 text-slate-50 h-16 items-center smM:flex-col smM:h-fit smM:py-4">
+			<div className="flex justify-between bg-indigo-900 text-slate-50 h-16 items-center smM:flex-col smM:h-fit smM:py-4">
 				<div className="flex items-center ml-4 text-[20px]">Company Name</div>
 				<div
 					className="sm:hidden h-full flex items-center smM:block"
@@ -34,7 +34,7 @@ function App() {
 						className="flex pr-[1.2rem] items-center h-full space-x-6 smM:hidden smM:flex-col smM:text-center smM:m-0 smM:p-0"
 						ref={ul}
 					>
-						<li>
+						<li className="smM:ml-6">
 							<a href="#">Home</a>
 						</li>
 						<li>
