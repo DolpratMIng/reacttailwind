@@ -6,7 +6,11 @@ export default {
 			smM: { max: "640px" },
 			sm: "640px",
 		},
-		extend: {},
+		extend: {
+			colors: {
+				'ming': '#243c5a',
+			}
+		},
 	},
 	plugins: [],
 };

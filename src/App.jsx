@@ -6,20 +6,16 @@ function App() {
 
 
 
-	function handler(id) {
+	function handler() {
 		if (ul.current) {
 			ul.current.classList.toggle("smM:!flex");
 		}
 	}
 
-	useEffect(() => {
-
-
-	}, [])
 
 	return (
 		<>
-			<div className="relative flex justify-between bg-indigo-900 text-slate-50 h-16 items-center smM:flex-col smM:h-fit smM:py-4">
+			<div className="relative flex justify-between text-slate-50 h-16 items-center smM:flex-col smM:h-fit smM:py-4 ">
 				<div className="flex items-center ml-4 text-[20px]">Company Name</div>
 				<div
 					className="sm:hidden h-full flex items-center smM:block"
@@ -45,7 +41,8 @@ function App() {
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div >
+
 		</>
 	);
 }
