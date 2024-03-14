@@ -3,15 +3,19 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 
 function App() {
 	const ul = useRef(null);
-	useEffect(() => {
-		console.log(ul.current.id);
-	}, []);
+
+
 
 	function handler(id) {
 		if (ul.current) {
 			ul.current.classList.toggle("smM:!flex");
 		}
 	}
+
+	useEffect(() => {
+
+
+	}, [])
 
 	return (
 		<>
@@ -29,7 +33,6 @@ function App() {
 					<ul
 						className="flex pr-[1.2rem] items-center h-full space-x-6 smM:hidden smM:flex-col smM:text-center smM:m-0 smM:p-0"
 						ref={ul}
-						id="ul"
 					>
 						<li>
 							<a href="#">Home</a>
