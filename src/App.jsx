@@ -1,25 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useRef, useState } from "react";
+import DehazeIcon from "@mui/icons-material/Dehaze";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const ul = useRef(null);
+	useEffect(() => {
+		console.log(ul.current.id);
+	}, []);
 
-  return (
-    <>
-      <div className='flex justify-between bg-indigo-900 bg-black text-slate-50 h-16'>
-        <div className='flex items-center ml-4 text-[20px]'>Company Name</div>
+	function handler(id) {
+		if (ul.current) {
+			ul.current.classList.toggle("smM:!flex");
+		}
+	}
 
-        <div>
-          <ul className='flex pr-[1.2rem] items-center h-full space-x-6'>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-          </ul>
-        </div>
-      </div>
-    </>
-  )
+	return (
+		<>
+			<div className="relative flex justify-between bg-indigo-900 text-slate-50 h-16 items-center smM:flex-col smM:h-fit smM:py-4">
+				<div className="flex items-center ml-4 text-[20px]">Company Name</div>
+				<div
+					className="sm:hidden h-full flex items-center smM:block"
+					onClick={() => {
+						handler();
+					}}
+				>
+					<DehazeIcon className="absolute right-11 smM:top-5" />
+				</div>
+				<div>
+					<ul
+						className="flex pr-[1.2rem] items-center h-full space-x-6 smM:hidden smM:flex-col smM:text-center smM:m-0 smM:p-0"
+						ref={ul}
+						id="ul"
+					>
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
